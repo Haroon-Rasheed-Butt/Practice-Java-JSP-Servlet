@@ -2,25 +2,42 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
 
 
+
+  <!--Add Servlet-->
   <servlet>
   	<servlet-name>AddServlet</servlet-name>
   	<servlet-class>com.practice.AddServlet</servlet-class>
+  	<init-param>
+  		<param-name>ServletGenericNumber</param-name>
+  		<param-value>5</param-value>
+  	</init-param>
   </servlet>
   
   <servlet-mapping>
   	<servlet-name>AddServlet</servlet-name>
   	<url-pattern>/add</url-pattern>
   </servlet-mapping>
+  <!--Add Servlet End-->
   
-  
+  <!--Square Servlet-->
   <servlet>
   	<servlet-name>SquareServlet</servlet-name>
   	<servlet-class>com.practice.SquareServlet</servlet-class>
+  	<init-param>
+  		<param-name>ServletGenericNumber</param-name>
+  		<param-value>6</param-value>
+  	</init-param>
   </servlet>
   
   <servlet-mapping>
   	<servlet-name>SquareServlet</servlet-name>
   	<url-pattern>/square</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> 
+  <!--Square Servlet End-->
+  
+  <context-param>
+  	<param-name>GenericNumber</param-name>
+  	<param-value>2</param-value>
+  </context-param>
   
 </web-app>

@@ -3,6 +3,8 @@ package com.practice;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -49,12 +51,18 @@ public class SquareServlet extends HttpServlet {
 					addedNumber = Double.parseDouble(cookie.getValue());
 				}
 			}
-			
-			
 			double squareNumber = addedNumber * addedNumber;
+			ServletConfig sg = getServletConfig();
+			ServletContext sc = getServletContext();
+			double servletConfigNumber = Double.parseDouble(sg.getInitParameter("ServletGenericNumber"));
+			double servletContextNumber = Double.parseDouble(sc.getInitParameter("GenericNumber"));
+
 			
 			PrintWriter out = res.getWriter();
-			out.println(squareNumber);
+			out.println("square of number with passed parameter: " + squareNumber);
+			out.println("square of number with Square Servlet Config: " + servletConfigNumber*servletConfigNumber);
+			out.println("square of number with Shared Servlet Context: " + servletContextNumber*servletContextNumber);
+			
 		}
 
 }
