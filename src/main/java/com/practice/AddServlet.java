@@ -4,12 +4,14 @@ import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+@WebServlet("/add")
 public class AddServlet extends HttpServlet{
 //	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 //		double a = Double.parseDouble(req.getParameter("num1"));
@@ -55,9 +57,11 @@ public class AddServlet extends HttpServlet{
 		double a = Double.parseDouble(req.getParameter("num1"));
 		double b = Double.parseDouble(req.getParameter("num2"));
 		double add  = a+b;
-		Cookie cookie = new Cookie("numberToSquare", String.valueOf(add));
-		res.addCookie(cookie);
-		res.sendRedirect("square");	
+		res.getWriter().println(add);
+		/*
+		 * Cookie cookie = new Cookie("numberToSquare", String.valueOf(add));
+		 * res.addCookie(cookie); res.sendRedirect("square");
+		 */	
 	}
 	
 

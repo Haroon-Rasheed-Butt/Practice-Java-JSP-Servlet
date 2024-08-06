@@ -4,7 +4,7 @@
 
 
   <!--Add Servlet-->
-  <servlet>
+  <!--<servlet>
   	<servlet-name>AddServlet</servlet-name>
   	<servlet-class>com.practice.AddServlet</servlet-class>
   	<init-param>
@@ -16,7 +16,7 @@
   <servlet-mapping>
   	<servlet-name>AddServlet</servlet-name>
   	<url-pattern>/add</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>-->
   <!--Add Servlet End-->
   
   <!--Square Servlet-->
